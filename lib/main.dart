@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/Login_screen.dart';
 import 'package:flutter_application_1/screens/register.dart';
 import 'package:flutter_application_1/screens/welcome.dart';
+import 'package:flutter_application_1/utils/app_routes.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,11 +15,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: AppRoutes.welcome,
       routes: {
-        '/': (_) => WelcomeScreen(),
-        '/login': (_) => LoginScreen.init(context),
-        '/register': (_) => RegisterScreen(),
+        AppRoutes.welcome: (_) => WelcomeScreen(),
+        AppRoutes.login: (_) => LoginScreen.init(context),
+        AppRoutes.register: (_) => RegisterScreen(),
+        AppRoutes.home: (_) => const StoreScreen(),
       },
     );
   }

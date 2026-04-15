@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/app_routes.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -12,14 +13,14 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                Navigator.of(context).pushNamed('/login');
+                Navigator.of(context).pushNamed(AppRoutes.login);
               },
               child: const Text('Iniciar Sesion'),
             ),
             const SizedBox(height: 10),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).pushNamed('/register');
+                Navigator.of(context).pushNamed(AppRoutes.register);
               },
               child: const Text('Registrar'),
             ),
